@@ -23,7 +23,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 21000,
-              name: '[name]_[hash:7].[ext]'
+              name: '[name].[hash:8].[ext]'
             }
           }
         ]
