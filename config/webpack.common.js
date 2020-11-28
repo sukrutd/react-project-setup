@@ -1,13 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.js'),
   output: {
     path: path.resolve(__dirname, '..', './dist'),
-    filename: 'main.[hash].js'
+    filename: 'main.[hash:8].js'
   },
   module: {
     rules: [
@@ -33,11 +32,5 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '..', './src/index.html')
-    }),
-    new webpack.ProgressPlugin()
-  ]
+  plugins: [new CleanWebpackPlugin(), new webpack.ProgressPlugin()]
 };
