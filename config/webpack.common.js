@@ -3,10 +3,8 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, '..', './src/index.js'),
-  output: {
-    path: path.resolve(__dirname, '..', './dist'),
-    filename: 'main.[hash:8].js'
+  entry: {
+    main: path.resolve(__dirname, '..', './src/index.js')
   },
   module: {
     rules: [

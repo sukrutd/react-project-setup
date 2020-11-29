@@ -5,14 +5,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  output: {
+    path: path.resolve(__dirname, '..', './dist'),
+    filename: '[name].[hash:8].js'
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '..', './src/index.html')
-    }),
-    new Dotenv({
-      path: path.resolve(__dirname, '..', './.env.development')
-    })
+    new HtmlWebpackPlugin({ template: path.resolve(__dirname, '..', './src/index.html') }),
+    new Dotenv({ path: path.resolve(__dirname, '..', './.env.development') })
   ],
   module: {
     rules: [
